@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,6 +51,16 @@ public class MuseumController {
       @RequestParam(name = "max_dist_km") double maxDistance) {
     Coordinate coordinate = new Coordinate(latitude, longitude);
     Museum get = service.getClosestMuseum(coordinate, maxDistance);
+    MuseumDto result = ModelDtoConverter.modelToDto(get);
+    return ResponseEntity.ok(result);
+  }
+  
+  /**
+   * Controller method responsible for get a museum from id.
+  */
+  @GetMapping("/{id}")
+  public ResponseEntity<MuseumDto> getMuseum(@PathVariable Long id) {
+    Museum get = service.getMuseum(id);
     MuseumDto result = ModelDtoConverter.modelToDto(get);
     return ResponseEntity.ok(result);
   }
