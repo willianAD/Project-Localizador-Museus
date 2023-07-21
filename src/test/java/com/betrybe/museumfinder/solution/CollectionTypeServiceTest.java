@@ -5,8 +5,8 @@ import com.betrybe.museumfinder.service.CollectionTypeService;
 import com.betrybe.museumfinder.dto.CollectionTypeCount;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
 import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.BeforeEach;
 
 class CollectionTypeServiceTest {
   
