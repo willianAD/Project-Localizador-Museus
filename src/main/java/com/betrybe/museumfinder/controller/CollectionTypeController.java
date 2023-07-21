@@ -19,7 +19,7 @@ public class CollectionTypeController {
   private final CollectionTypeService service;
 
   @Autowired
-  CollectionTypeController(CollectionTypeService service) {
+  public CollectionTypeController(CollectionTypeService service) {
     this.service = service;
   }
 
