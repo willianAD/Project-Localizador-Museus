@@ -1,4 +1,4 @@
-# Sistema de Votação com Java
+# Localizador de Museus com Java
 
 ## Funcionalidades
 
